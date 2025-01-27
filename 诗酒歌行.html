@@ -4,6 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>诗酒歌行</title>
+    <!-- 连接到 manifest 文件 -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- 添加 PWA 兼容的 meta 标签 -->
+    <meta name="theme-color" content="#4CAF50">
+  
+    <!-- 启用 Service Worker -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js').then((registration) => {
+            console.log('Service Worker registered with scope:', registration.scope);
+          }).catch((error) => {
+            console.log('Service Worker registration failed:', error);
+          });
+        });
+      }
+    </script>
   <style>
     /* ========== 全局基础样式 ========== */
     body {
