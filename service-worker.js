@@ -3,7 +3,7 @@ self.addEventListener('install', (event) => {
     caches.open('poetry-cache').then((cache) => {
       return cache.addAll([
         '/',
-        '/诗酒歌行.html',
+        '/index.html',
         '/styles.css',
         '/scripts.js',
         '/icons/icon-192x192.png',
